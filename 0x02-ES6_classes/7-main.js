@@ -1,4 +1,5 @@
-// 7-main.js
+import Airport from "./7-airport.js";
 
-// This is the main file for the solution
-
+const airportSF = new Airport('San Francisco Airport', 'SFO');
+console.log(airportSF);
+console.log(airportSF.toString());
