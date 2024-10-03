@@ -2,12 +2,13 @@
 /* eslint-disable class-methods-use-this */
 export default class Building {
   constructor(sqft) {
-    if (typeof sqft !== 'number' || Number.isNaN(sqft)) {
-      throw new TypeError('sqft must be a number');
-    }
+    if (new.target !== Building &&
+      this.evacuationWarningMessage === Building.prototype.evacuationWarningMessage) {
+        throw new Error('Class extending Building must override evacuationWarningMessage');
+      }
     this._sqft = sqft;
   }
-
+  
   get sqft() {
     return this._sqft;
   }
@@ -17,9 +18,5 @@ export default class Building {
       throw new TypeError('sqft must be a number');
     }
     this._sqft = value;
-  }
-
-  evacuationWarningMessage() {
-    throw new Error('Class extending Building must override evacuationWarningMessage');
   }
 }
