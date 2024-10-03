@@ -1,4 +1,6 @@
-// 4-main.js
+import Pricing from './4-pricing.js';
+import Currency from './3-currency.js';
 
-// This is the main file for the solution
-
+const p = new Pricing(100, new Currency("EUR", "Euro"))
+console.log(p);
+console.log(p.displayFullPrice());
