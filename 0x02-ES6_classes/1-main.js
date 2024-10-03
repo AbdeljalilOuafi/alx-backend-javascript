@@ -1,4 +1,5 @@
 // 1-main.js
 
-// This is the main file for the solution
+import initializeRooms from './1-make_classrooms.js';
 
+console.log(initializeRooms());
