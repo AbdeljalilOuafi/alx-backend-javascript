@@ -1,4 +1,4 @@
-// 3-main.js
+import Currency from "./3-currency.js";
 
-// This is the main file for the solution
-
+const dollar = new Currency('$', 'Dollars');
+console.log(dollar.displayFullCurrency());

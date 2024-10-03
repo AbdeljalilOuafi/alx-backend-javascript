@@ -42,7 +42,6 @@ export default class HolbertonCourse {
     if (typeof value !== 'number' || Number.isNaN(value)) {
       throw new TypeError('Length must be a number');
     }
-    // Correct the missing assignment here
     // eslint-disable-next-line no-underscore-dangle
     this._length = value;
   }
