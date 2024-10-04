@@ -1,4 +1,5 @@
-// 8-main.js
+import HolbertonClass from "./8-hbtn_class.js";
 
-// This is the main file for the solution
-
+const hc = new HolbertonClass(12, "Mezzanine")
+console.log(Number(hc));
+console.log(String(hc));
