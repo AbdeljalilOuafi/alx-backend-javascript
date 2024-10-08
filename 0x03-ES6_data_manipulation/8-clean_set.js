@@ -9,5 +9,3 @@ export default function cleanSet(set, startString) {
   }
   return arr.join('-');
 }
-
-console.log(cleanSet(new Set(['bonjovi', 'bonaparte', 'bonappetit', 'banana']), 'bon'));
