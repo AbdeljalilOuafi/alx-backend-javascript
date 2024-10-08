@@ -1,4 +1,3 @@
-// 6-main.js
+import setFromArray from "./6-set.js";
 
-// This is the main file for the solution
-
+console.log(setFromArray([12, 32, 15, 78, 98, 15]));
