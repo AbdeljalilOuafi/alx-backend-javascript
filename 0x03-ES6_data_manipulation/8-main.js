@@ -1,4 +1,4 @@
-// 8-main.js
+import cleanSet from "./8-clean_set.js";
 
-// This is the main file for the solution
-
+console.log(cleanSet(new Set(['bonjovi', 'bonaparte', 'bonappetit', 'banana']), 'bon'));
+console.log(cleanSet(new Set(['bonjovi', 'bonaparte', 'bonappetit', 'banana']), ''));
