@@ -9,9 +9,9 @@ process.stdin.on('data', (data) => {
 if (process.stdin.isTTY === undefined) {
   process.stdin.on('end', () => {
     process.stdout.write('This important software is now closing\n');
-});
+  });
 } else {
-  if (process.stdin.on('pause', () => {
+  process.stdin.on('pause', () => {
     process.stdout.write('This important software is now closing\n');
-  }));
-};
+  });
+}
