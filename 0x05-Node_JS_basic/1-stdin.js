@@ -1,17 +1,16 @@
 process.stdout.write('Welcome to Holberton School, what is your name?\n');
+
 process.stdin.on('data', (data) => {
   process.stdout.write(`Your name is: ${data.toString()}`);
-  if (process.stdin.isTTY) {
-    process.stdin.pause();
-  }
+  process.stdin.pause(); // Stops further input in interactive mode
 });
 
-if (process.stdin.isTTY === undefined) {
-  process.stdin.on('end', () => {
-    process.stdout.write('This important software is now closing\n');
-  });
+const closeProgram = () => {
+  process.stdout.write('This important software is now closing\n');
+};
+
+if (process.stdin.isTTY) {
+  process.stdin.on('pause', closeProgram); // Interactive mode
 } else {
-  process.stdin.on('pause', () => {
-    process.stdout.write('This important software is now closing\n');
-  });
+  process.stdin.on('end', closeProgram); // Non-interactive mode
 }
