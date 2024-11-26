@@ -1,10 +1,8 @@
-#!/usr/bin/node
-
 const express = require('express');
 const fs = require('fs');
 
 const app = express();
-const port = 1245;
+
 const countStudents = async (path) => {
   try {
     const csvData = await fs.readFileSync(path, 'utf8');
@@ -48,23 +46,24 @@ const countStudents = async (path) => {
   }
 };
 
-app.get('/', (req, res) => {
-  res.send('Hello Holberton School!');
+app.get('/', (request, response) => {
+  response.send('Hello Holberton School!');
 });
 
-app.get('/students', (req, res) => {
+app.get('/students', (request, response) => {
   countStudents(process.argv[2])
     .then((data) => {
-      res.send(`This is the list of our students\n${data}`);
+      response.send(`This is the list of our students\n${data}`);
     })
-    .catch((err) => {
-      res.status(404);
-      res.send(err.message);
+    .catch(() => {
+      response
+        .status(404)
+        .send('This is the list of our students\nCannot load the database');
     });
 });
 
-app.listen(port, () => {
-  console.log('Server is running on http://localhost:1245');
+app.listen(1245, () => {
+  console.log('Example app listening on port 1245');
 });
 
 module.exports = app;
